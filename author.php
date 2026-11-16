@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'author') {
 
 $user_id = $_SESSION['user_id'];
 
-// Add / Update Article
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_article'])) {
     $category = $_POST['category'];
     $title = $_POST['title'];
