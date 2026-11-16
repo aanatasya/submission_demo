@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_article'])) {
     exit;
 }
 
-// Delete Article
+
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $stmt = $conn->prepare("DELETE FROM articles WHERE id = ? AND author_id = ? AND status = 'Editing'");
@@ -37,7 +37,7 @@ if (isset($_GET['delete'])) {
     exit;
 }
 
-// Submit for Review
+
 if (isset($_GET['submit_review'])) {
     $id = $_GET['submit_review'];
     $stmt = $conn->prepare("UPDATE articles SET status = 'Under Review' WHERE id = ? AND author_id = ? AND status = 'Editing'");
